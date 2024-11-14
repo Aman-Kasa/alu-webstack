@@ -1,0 +1,5 @@
+frontend http_front
+    bind *:80
+    mode http  # Enable HTTP mode
+    option httplog  # Enable logging for HTTP traffic
+    http-request redirect scheme https code 301 if !{ ssl_fc }
